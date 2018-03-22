@@ -1,0 +1,14 @@
+﻿syntax = "proto3";
+
+package grpcstreamserver;
+
+service TestService {
+    rpc GetMessages(MessageRequest) returns (stream TestMessage) {}
+}
+
+message MessageRequest {
+}
+
+message TestMessage {
+    int32 messageNumber = 1;
+}
